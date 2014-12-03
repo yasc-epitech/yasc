@@ -25,9 +25,11 @@
 - [Rubular][32]: Ruby regular expression editor
 - [Hex Words][33]: Color codes with hexspeak
 - [Coolors][34]: Color palette generator
+- [HTTPie][35]: cURL-like tool for humans
 
 [30]: http://entity-lookup.leftlogic.com/
 [31]: https://lodash.com/
 [32]: http://rubular.com/
 [33]: http://hexwords.info/
 [34]: http://coolors.co/ad7a99-b2cede-8cdfd6-6dc0d5-5a716a
+[35]: https://github.com/jakubroztocil/httpie
