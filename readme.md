@@ -4,6 +4,14 @@
 
 ## A few links
 
+### Installation
+
+- [To install node, grunt & bower][1]: If not already done
+- [To install MongoDB][2]: Just follow the process
+
+[1]: https://github.com/ygotthilf/web-jobboard/blob/master/README.md
+[2]: http://docs.mongodb.org/manual/installation/
+
 ### Node.js
 
 - [Felix's Node.js Guide][10]: I have been advised to follow those guides
