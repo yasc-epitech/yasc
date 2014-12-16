@@ -5,8 +5,21 @@
 
 'use strict';
 
+var Song = require('../api/song/song.model');
 var Thing = require('../api/thing/thing.model');
 var User = require('../api/user/user.model');
+
+Song.find({}).remove(function() {
+  Song.create({
+    name : 'Musique de fou',
+    url : 'http://google.com',
+    info : 'Info de taré'
+  }, {
+    name : 'LEL',
+    url : 'http://posey.com',
+    info : 'IZI'
+  });
+});
 
 Thing.find({}).remove(function() {
   Thing.create({
