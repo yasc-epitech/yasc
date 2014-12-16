@@ -5,9 +5,18 @@
 
 'use strict';
 
+var Tag = require('../api/tag/tag.model');
 var Track = require('../api/track/track.model');
 var Thing = require('../api/thing/thing.model');
 var User = require('../api/user/user.model');
+
+Tag.find({}).remove(function() {
+  Tag.create({
+    name: 'Foobar'
+  }, {
+    name: '#IZI'
+  });
+});
 
 Track.find({}).remove(function() {
   Track.create({

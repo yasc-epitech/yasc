@@ -5,7 +5,7 @@ var mongoose = require('mongoose'),
 /*
 ** Hugo - Add the tracks' fields there
 */
-var SongSchema = new Schema({
+var TrackSchema = new Schema({
   title: String,
   description: String,
   url: String,
@@ -15,4 +15,4 @@ var SongSchema = new Schema({
   created_at: { type: Date, default: Date.now }
 });
 
-module.exports = mongoose.model('Track', SongSchema);
+module.exports = mongoose.model('Track', TrackSchema);
