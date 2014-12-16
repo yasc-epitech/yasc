@@ -5,19 +5,25 @@
 
 'use strict';
 
-var Song = require('../api/song/song.model');
+var Track = require('../api/track/track.model');
 var Thing = require('../api/thing/thing.model');
 var User = require('../api/user/user.model');
 
-Song.find({}).remove(function() {
-  Song.create({
-    name : 'Musique de fou',
+Track.find({}).remove(function() {
+  Track.create({
+    title : 'Musique de fou',
+    description : 'description track 1',
     url : 'http://google.com',
-    info : 'Info de taré'
+    artwork_url : 'http://posey.com/artwork_url',
+    duration : 240,
+    author : 'Anakin'
   }, {
-    name : 'LEL',
+    title : 'LEL',
+    description : 'description track 2',
     url : 'http://posey.com',
-    info : 'IZI'
+    artwork_url : 'http://posey.com/artwork_url',
+    duration : 180,
+    author : 'Dark Vador'
   });
 });
 

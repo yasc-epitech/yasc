@@ -4,21 +4,21 @@
 
 'use strict';
 
-var song = require('./song.model');
+var track = require('./track.model');
 
 exports.register = function(socket) {
-  song.schema.post('save', function (doc) {
+  track.schema.post('save', function (doc) {
     onSave(socket, doc);
   });
-  song.schema.post('remove', function (doc) {
+  track.schema.post('remove', function (doc) {
     onRemove(socket, doc);
   });
 }
 
 function onSave(socket, doc, cb) {
-  socket.emit('song:save', doc);
+  socket.emit('track:save', doc);
 }
 
 function onRemove(socket, doc, cb) {
-  socket.emit('song:remove', doc);
+  socket.emit('track:remove', doc);
 }
