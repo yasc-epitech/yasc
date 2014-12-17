@@ -11,6 +11,7 @@
 
 var _ = require('lodash');
 var Track = require('./track.model');
+var SoundCloudAPI = require("soundcloud-node");
 
 // Get list of tracks
 exports.index = function(req, res) {

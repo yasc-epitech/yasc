@@ -12,7 +12,8 @@ var TrackSchema = new Schema({
   artwork_url: String,
   duration: Number,
   author: String,
-  created_at: { type: Date, default: Date.now }
+  created_at: { type: Date, default: Date.now },
+  user: { type: Schema.ObjectId, ref: 'UserSchema'}
 });
 
 module.exports = mongoose.model('Track', TrackSchema);

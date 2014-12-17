@@ -18,24 +18,6 @@ Tag.find({}).remove(function() {
   });
 });
 
-Track.find({}).remove(function() {
-  Track.create({
-    title : 'Musique de fou',
-    description : 'description track 1',
-    url : 'http://google.com',
-    artwork_url : 'http://posey.com/artwork_url',
-    duration : 240,
-    author : 'Anakin'
-  }, {
-    title : 'LEL',
-    description : 'description track 2',
-    url : 'http://posey.com',
-    artwork_url : 'http://posey.com/artwork_url',
-    duration : 180,
-    author : 'Dark Vador'
-  });
-});
-
 Thing.find({}).remove(function() {
   Thing.create({
     name : 'Development Tools',
@@ -74,4 +56,25 @@ User.find({}).remove(function() {
       console.log('finished populating users');
     }
   );
+});
+
+Track.find({}).remove(function() {
+  console.log(Thing.findOne({info: 'Deployment Ready'}));
+  Track.create({
+    title: 'Musique de fou',
+    description: 'description track 1',
+    url: 'http://google.com',
+    artwork_url: 'http://posey.com/artwork_url',
+    duration: 240,
+    author: 'Anakin',
+    user: User.find({'email': 'test@ŧest.com'})
+  }, {
+    title: 'LEL',
+    description: 'description track 2',
+    url: 'http://posey.com',
+    artwork_url: 'http://posey.com/artwork_url',
+    duration: 180,
+    author: 'Dark Vador',
+    user: User.findOne({email: 'test@ŧest.com'})
+  });
 });
