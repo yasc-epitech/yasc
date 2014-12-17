@@ -15,6 +15,7 @@ var config = require('./config/environment');
 mongoose.connect(config.mongo.uri, config.mongo.options);
 
 // Populate DB with sample data
+// TODO: Hugo - Replace seed file by seed folder ( in /config )
 if(config.seedDB) { require('./config/seed'); }
 
 // Setup server
