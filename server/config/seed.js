@@ -5,6 +5,8 @@
 
 'use strict';
 
+var Gender = require('../api/gender/gender.model');
+var Playlist = require('../api/playlist/playlist.model');
 var Tag = require('../api/tag/tag.model');
 var Track = require('../api/track/track.model');
 var Thing = require('../api/thing/thing.model');

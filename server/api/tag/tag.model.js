@@ -6,7 +6,7 @@ var mongoose = require('mongoose'),
 ** Hugo - Add the tags' fields there
 */
 var TagSchema = new Schema({
-  name: String,
+  name: String
   // genre: { type: ObjectId, ref: 'TrackSchema' },
 });
 
