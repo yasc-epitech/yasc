@@ -80,3 +80,21 @@ Track.find({}).remove(function() {
     user: User.findOne({email: 'test@ŧest.com'})
   });
 });
+
+Gender.find({}).remove(function() {
+  Gender.create({
+    name: 'Post-rock'
+  }, {
+    name: "Hip-Hop"
+  });
+});
+
+Playlist.find({}).remove(function() {
+  Playlist.create({
+    title: 'Chill',
+    user: User.findOne({email: 'test@ŧest.com'})
+  }, {
+    title: "Melodic",
+    user: User.findOne({email: 'test@ŧest.com'})
+  });
+});
