@@ -69,7 +69,7 @@ Track.find({}).remove(function() {
     artwork_url: 'http://posey.com/artwork_url',
     duration: 240,
     author: 'Anakin',
-    user: User.find({'email': 'test@ŧest.com'})
+    user:  User.findOne({ email: 'admin@admin.com' })._id
   }, {
     title: 'LEL',
     description: 'description track 2',
@@ -77,7 +77,7 @@ Track.find({}).remove(function() {
     artwork_url: 'http://posey.com/artwork_url',
     duration: 180,
     author: 'Dark Vador',
-    user: User.findOne({email: 'test@ŧest.com'})
+    user: User.findOne({email: 'test@ŧest.com'})._id
   });
 });
 
@@ -92,9 +92,9 @@ Gender.find({}).remove(function() {
 Playlist.find({}).remove(function() {
   Playlist.create({
     title: 'Chill',
-    user: User.findOne({email: 'test@ŧest.com'})
+    user: User.findOne({email: 'test@ŧest.com'})._id
   }, {
     title: "Melodic",
-    user: User.findOne({email: 'test@ŧest.com'})
+    user: User.findOne({email: 'test@ŧest.com'})._id
   });
 });
