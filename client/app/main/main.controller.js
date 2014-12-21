@@ -3,11 +3,21 @@
 angular.module('yascApp')
   .controller('MainCtrl', function ($scope, $http, socket) {
     $scope.awesomeThings = [];
+    $scope.awesomeTracks = [];
 
     $http.get('/api/things').success(function(awesomeThings) {
       $scope.awesomeThings = awesomeThings;
       socket.syncUpdates('thing', $scope.awesomeThings);
     });
+
+    $http.get('/api/tracks').success(function(awesomeTracks) {
+      $scope.awesomeTracks = awesomeTracks;
+      socket.syncUpdates('track', $scope.awesomeTracks);
+    });
+
+    $scope.deleteTrack = function(track) {
+      $http.delete('/api/tracks/' + track._id);
+    };
 
     $scope.addThing = function() {
       if($scope.newThing === '') {
@@ -22,6 +32,7 @@ angular.module('yascApp')
     };
 
     $scope.$on('$destroy', function () {
+      socket.unsyncUpdates('track');
       socket.unsyncUpdates('thing');
     });
   });
