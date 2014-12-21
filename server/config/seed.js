@@ -9,14 +9,25 @@ var Gender = require('../api/gender/gender.model');
 var Playlist = require('../api/playlist/playlist.model');
 var Tag = require('../api/tag/tag.model');
 var Track = require('../api/track/track.model');
+var Tag_and_track = require('../api/tag_and_track/tag_and_track.model');
 var Thing = require('../api/thing/thing.model');
 var User = require('../api/user/user.model');
 
+Gender.find({}).remove(function() {
+  Gender.create({
+    name: 'Post-rock'
+  }, {
+    name: "Hip-Hop"
+  });
+});
+
 Tag.find({}).remove(function() {
   Tag.create({
-    name: 'Foobar'
+    name: 'Foobar',
+    gender: Gender.findOne({ name: 'Post-rock' })._id
   }, {
-    name: '#IZI'
+    name: '#IZI',
+    gender: Gender.findOne({ name: 'Hip-Hop' })._id
   });
 });
 
@@ -61,7 +72,6 @@ User.find({}).remove(function() {
 });
 
 Track.find({}).remove(function() {
-  console.log(Thing.findOne({info: 'Deployment Ready'}));
   Track.create({
     title: 'Musique de fou',
     description: 'description track 1',
@@ -78,15 +88,22 @@ Track.find({}).remove(function() {
     duration: 180,
     author: 'Dark Vador',
     user: User.findOne({email: 'test@ŧest.com'})._id
-  });
+  }, function() {
+      console.log('finished populating tracks');
+    });
 });
 
-Gender.find({}).remove(function() {
-  Gender.create({
-    name: 'Post-rock'
+
+Tag_and_track.find({}).remove(function() {
+  Tag_and_track.create({
+    user:  Tag.findOne({ email: 'admin@admin.com' })._id,
+    track:  Track.findOne({ email: 'admin@admin.com' })._id
   }, {
-    name: "Hip-Hop"
-  });
+    user:  User.findOne({ email: 'admin@admin.com' })._id,
+    track:  Tag.findOne({ email: 'admin@admin.com' })._id
+  }, function() {
+      console.log('finished populating tag_and_tracks');
+    });
 });
 
 Playlist.find({}).remove(function() {
@@ -96,5 +113,7 @@ Playlist.find({}).remove(function() {
   }, {
     title: "Melodic",
     user: User.findOne({email: 'test@ŧest.com'})._id
-  });
+  }, function() {
+      console.log('finished populating playlists');
+    });
 });

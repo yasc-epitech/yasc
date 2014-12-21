@@ -14,6 +14,7 @@ module.exports = function(app) {
   app.use('/api/tags', require('./api/tag'));
   app.use('/api/things', require('./api/thing'));
   app.use('/api/tracks', require('./api/track'));
+  app.use('/api/tag_and_tracks', require('./api/tag_and_track'));
   app.use('/api/users', require('./api/user'));
 
   app.use('/auth', require('./auth'));
