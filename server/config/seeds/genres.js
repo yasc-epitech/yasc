@@ -1,11 +1,11 @@
 'use strict';
 
 
-var Gender = require('../../api/gender/gender.model');
+var Genre = require('../../api/genre/genre.model');
 
 
-Gender.find({}).remove(function() {
-  Gender.create({
+Genre.find({}).remove(function() {
+  Genre.create({
     name: 'Post-rock'
   }, {
     name: 'Hip-Hop'

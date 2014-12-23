@@ -4,21 +4,21 @@
 
 'use strict';
 
-var gender = require('./gender.model');
+var genre = require('./genre.model');
 
 exports.register = function(socket) {
-  gender.schema.post('save', function (doc) {
+  genre.schema.post('save', function (doc) {
     onSave(socket, doc);
   });
-  gender.schema.post('remove', function (doc) {
+  genre.schema.post('remove', function (doc) {
     onRemove(socket, doc);
   });
 }
 
 function onSave(socket, doc, cb) {
-  socket.emit('gender:save', doc);
+  socket.emit('genre:save', doc);
 }
 
 function onRemove(socket, doc, cb) {
-  socket.emit('gender:remove', doc);
+  socket.emit('genre:remove', doc);
 }

@@ -3,8 +3,8 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
-var GenderSchema = new Schema({
+var GenreSchema = new Schema({
   name: String
 });
 
-module.exports = mongoose.model('Gender', GenderSchema);
+module.exports = mongoose.model('Genre', GenreSchema);

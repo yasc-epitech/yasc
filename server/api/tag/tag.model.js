@@ -5,7 +5,7 @@ var mongoose = require('mongoose'),
 
 var TagSchema = new Schema({
   name: String,
-  gender: { type: Schema.ObjectId, ref: 'GenderSchema'}
+  genre: { type: Schema.ObjectId, ref: 'GenreSchema'}
 });
 
 module.exports = mongoose.model('Tag', TagSchema);
