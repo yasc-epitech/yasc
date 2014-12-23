@@ -15,8 +15,15 @@ var config = require('./config/environment');
 mongoose.connect(config.mongo.uri, config.mongo.options);
 
 // Populate DB with sample data
-// TODO: Hugo - Replace seed file by seed folder ( in /config )
-if(config.seedDB) { require('./config/seed'); }
+if ( config.seedDB ) {
+  require('./config/seed');
+  require('./config/seeds/users');
+  require('./config/seeds/things');
+  require('./config/seeds/genres');
+  require('./config/seeds/tags');
+  require('./config/seeds/tracks');
+  require('./config/seeds/playlists');
+}
 
 // Setup server
 var app = express();
