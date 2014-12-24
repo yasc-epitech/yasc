@@ -1,9 +1,9 @@
 'use strict';
 
 var express = require('express');
-var controller = require('./user.controller');
-var config = require('../../config/environment');
-var auth = require('../../auth/auth.service');
+var controller = include('api/user/user.controller');
+var config = include('config/environment');
+var auth = include('auth/auth.service');
 
 var router = express.Router();
 

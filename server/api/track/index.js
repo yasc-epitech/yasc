@@ -1,7 +1,7 @@
 'use strict';
 
 var express = require('express');
-var controller = require('./track.controller');
+var controller = include('api/track/track.controller');
 
 var router = express.Router();
 

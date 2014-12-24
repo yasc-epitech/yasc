@@ -1,7 +1,7 @@
 'use strict';
 
 var express = require('express');
-var controller = require('./genre.controller');
+var controller = include('api/genre/genre.controller');
 
 var router = express.Router();
 

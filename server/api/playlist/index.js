@@ -1,7 +1,7 @@
 'use strict';
 
 var express = require('express');
-var controller = require('./playlist.controller');
+var controller = include('api/playlist/playlist.controller');
 
 var router = express.Router();
 

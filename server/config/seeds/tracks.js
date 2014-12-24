@@ -1,7 +1,7 @@
 'use strict';
 
 
-var Track = require('../../api/track/track.model');
+var Track = include('api/track/track.model');
 
 
 Track.find({}).remove(function() {

@@ -4,6 +4,16 @@
 
 'use strict';
 
+// Some helpers for path computing
+// Use:         include('api/thing/thing.model')
+// Instead of:  require('/path/to/yasc/server/api/thing/thing.model')
+global.absolute_path = function(path) {
+  return __dirname + (typeof(path) === 'undefined' ? '' : path);
+}
+global.include = function(file) {
+  return require(absolute_path('/' + file));
+}
+
 // Set default node environment to development
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 

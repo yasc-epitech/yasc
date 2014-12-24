@@ -1,8 +1,8 @@
 'use strict';
 
 var should = require('should');
-var app = require('../../app');
-var User = require('./user.model');
+var app = include('app');
+var User = include('api/user/user.model');
 
 var user = new User({
   provider: 'local',

@@ -4,7 +4,7 @@
 
 'use strict';
 
-var track = require('./track.model');
+var track = include('api/track/track.model');
 
 exports.register = function(socket) {
   track.schema.post('save', function (doc) {

@@ -10,7 +10,7 @@
 'use strict';
 
 var _ = require('lodash');
-var Track = require('./track.model');
+var Track = include('api/track/track.model');
 var SoundCloudAPI = require("soundcloud-node");
 
 // Get list of tracks

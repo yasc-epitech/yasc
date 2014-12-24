@@ -1,7 +1,7 @@
 'use strict';
 
 var express = require('express');
-var controller = require('./tag.controller');
+var controller = include('api/tag/tag.controller');
 
 var router = express.Router();
 

@@ -4,7 +4,7 @@
 
 'use strict';
 
-var thing = require('./thing.model');
+var thing = include('api/thing/thing.model');
 
 exports.register = function(socket) {
   thing.schema.post('save', function (doc) {

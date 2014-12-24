@@ -4,7 +4,7 @@
 
 'use strict';
 
-var genre = require('./genre.model');
+var genre = include('api/genre/genre.model');
 
 exports.register = function(socket) {
   genre.schema.post('save', function (doc) {

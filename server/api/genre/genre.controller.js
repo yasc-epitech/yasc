@@ -10,7 +10,7 @@
 'use strict';
 
 var _ = require('lodash');
-var Genre = require('./genre.model');
+var Genre = include('api/genre/genre.model');
 
 // Get list of genres
 exports.index = function(req, res) {

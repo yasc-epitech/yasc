@@ -10,7 +10,7 @@
 'use strict';
 
 var _ = require('lodash');
-var Tag_and_track = require('./tag_and_track.model');
+var Tag_and_track = include('api/tag_and_track//tag_and_track.model');
 
 // Get list of tag_and_tracks
 exports.index = function(req, res) {

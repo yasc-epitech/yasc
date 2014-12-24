@@ -1,8 +1,8 @@
 'use strict';
 
 
-var Playlist = require('../../api/playlist/playlist.model');
-var User = require('../../api/user/user.model');
+var Playlist = include('api/playlist/playlist.model');
+var User = include('api/user/user.model');
 
 
 Playlist.find({}).remove(function() {
