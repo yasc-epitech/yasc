@@ -4,7 +4,7 @@
 
 'use strict';
 
-var playlist = include('api/playlist/playlist.model');
+var playlist = require('../../api/playlist/playlist.model');
 
 exports.register = function(socket) {
   playlist.schema.post('save', function (doc) {

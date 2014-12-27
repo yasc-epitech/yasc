@@ -1,6 +1,6 @@
 'use strict';
 
-var User = include('api/user/user.model');
+var User = require('../../api/user/user.model');
 
 
 var userTest = {

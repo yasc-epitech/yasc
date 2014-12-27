@@ -1,8 +1,8 @@
 'use strict';
 
 
-var Track = include('api/track/track.model');
-var User = include('api/user/user.model');
+var Track = require('../../api/track/track.model');
+var User = require('../../api/user/user.model');
 
 
 // MongoDB doesn't support synchronous queries, so we have to first get the

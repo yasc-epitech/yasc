@@ -2,7 +2,7 @@
 
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
-var User = include('api/user/user.model');
+var User = require('../../api/user/user.model');
 
 var TrackSchema = new Schema({
   title: String,

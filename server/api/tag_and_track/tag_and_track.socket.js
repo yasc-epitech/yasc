@@ -4,7 +4,7 @@
 
 'use strict';
 
-var tag_and_track = include('api/tag_and_track//tag_and_track.model');
+var tag_and_track = require('./tag_and_track.model');
 
 exports.register = function(socket) {
   tag_and_track.schema.post('save', function (doc) {

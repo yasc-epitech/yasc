@@ -4,7 +4,7 @@
 
 'use strict';
 
-var tag = include('api/tag/tag.model');
+var tag = require('./tag.model');
 
 exports.register = function(socket) {
   tag.schema.post('save', function (doc) {

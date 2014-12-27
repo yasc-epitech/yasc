@@ -10,7 +10,7 @@
 'use strict';
 
 var _ = require('lodash');
-var Playlist = include('api/playlist/playlist.model');
+var Playlist = require('./playlist.model');
 
 // Get list of playlists
 exports.index = function(req, res) {

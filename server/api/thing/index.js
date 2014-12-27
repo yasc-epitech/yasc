@@ -1,7 +1,7 @@
 'use strict';
 
 var express = require('express');
-var controller = include('api/thing/thing.controller');
+var controller = require('./thing.controller');
 
 var router = express.Router();
 

@@ -10,7 +10,7 @@
 'use strict';
 
 var _ = require('lodash');
-var Tag = include('api/tag/tag.model');
+var Tag = require('./tag.model');
 
 // Get list of tags
 exports.index = function(req, res) {
