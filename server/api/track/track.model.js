@@ -15,14 +15,8 @@ var TrackSchema = new Schema({
   user: { type : Schema.ObjectId , ref: 'User'}
 });
 
-// TODO: Change seeds so tracks' user will be set correctly
 TrackSchema.path('user').validate(function (value, respond){
-
-  console.log('display id of a track\'s user - start');
-  console.log(value);
-  console.log('display id of a track\'s user - end');
   User.findById (value, function (err, user){
-
       if(err || !user) return respond(false);
       console.log(user._id);
       respond();

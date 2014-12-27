@@ -3,19 +3,20 @@
 var User = include('api/user/user.model');
 
 
-  //User.find({}).remove(function() {
-  User.create({
-    provider:  'local',
-    name:      'Test User',
-    email:     'test@test.com',
-    password:  'test'
-  }, {
-    provider:  'local',
-    role:      'admin',
-    name:      'Admin',
-    email:     'admin@admin.com',
-    password:  'admin'
-  }, function() {
-    console.log('Finished populating users');
-  });
-//});
+var userTest = {
+  provider: 'local',
+  name:     'John Doe',
+  email:    'john.doe@yasc.com',
+  password: 'test'
+}
+var userAdmin = {
+  provider: 'local',
+  role:     'admin',
+  name:     'Judge Dredd',
+  email:    'judge.dredd@yasc.com',
+  password: 'admin'
+}
+
+User.findOneOrCreate({email: 'john.doe@yasc.com'}, userTest, function(error, user) { });
+User.findOneOrCreate({email: 'judge.dredd@yasc.com'}, userAdmin, function(error, user) { });
+console.log('Finished populating users');

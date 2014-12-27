@@ -20,6 +20,8 @@ var UserSchema = new Schema({
   google: {},
   github: {}
 });
+var findOneOrCreate = require('mongoose-find-one-or-create');
+UserSchema.plugin(findOneOrCreate);
 
 /**
  * Virtuals
