@@ -3,7 +3,7 @@
 var User = include('api/user/user.model');
 
 
-User.find({}).remove(function() {
+//User.find({}).remove(function() {
   User.create({
     provider:  'local',
     name:      'Test User',
@@ -18,4 +18,4 @@ User.find({}).remove(function() {
   }, function() {
     console.log('Finished populating users');
   });
-});
+//});

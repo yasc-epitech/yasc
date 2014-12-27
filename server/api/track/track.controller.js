@@ -11,6 +11,7 @@
 
 var _ = require('lodash');
 var Track = include('api/track/track.model');
+var User = include('api/user/user.model');
 var SoundCloudAPI = require("soundcloud-node");
 
 // Get list of tracks
