@@ -8,7 +8,7 @@ var User = include('api/user/user.model');
 // MongoDB doesn't support synchronous queries, so we have to first get the
 // user and then feed it to our track object.
 
-User.findOne({ email: 'john.doe@yasc.com' }, function(error, user) {
+User.findOne({ email: 'admin@admin.com' }, function(error, user) {
   Track.create({
     title:       'Musique de fou',
     description: 'description track 1',
