@@ -27,6 +27,16 @@ exports.show = function(req, res) {
   Track.findById(req.params.id, function (err, track) {
     if(err) { return handleError(res, err); }
     if(!track) { return res.send(404); }
+/*    console.log("test 1");
+
+
+    var user = User.findById(track.user, function (err, user) {
+      if(err) { return handleError(res, err); }
+      if(!user) { return res.send(404); }
+    console.log("test 2");
+      return user;
+    });
+    console.log("trackest 3");*/
     return res.json(track);
   });
 };
