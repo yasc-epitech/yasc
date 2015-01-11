@@ -5,6 +5,17 @@ angular.module('yascApp')
     $scope.menu = [{
       'title': 'Home',
       'link': '/'
+    }, ];
+
+    $scope.logedInMenu = [{
+      'title': 'Playlist',
+      'link': '/playlist'
+    },{
+      'title': 'Tracks',
+      'link': '/tracks'
+    },{
+      'title': 'Genres',
+      'link': '/genres'
     }];
 
     $scope.isCollapsed = true;
