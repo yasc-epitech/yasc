@@ -11,6 +11,7 @@ angular.module('yascApp')
 
     $scope.deleteGenre = function(genre) {
       $http.delete('/api/genres/' + genre._id);
+      _.remove($scope.genres, function(item) { return item._id === genre._id });
     };
 
     $scope.addGenre = function() {
