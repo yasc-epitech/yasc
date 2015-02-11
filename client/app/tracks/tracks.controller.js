@@ -17,8 +17,10 @@ angular.module('yascApp')
       if($scope.newTrack === '') {
         return;
       }
-      $http.post('/api/tracks', { title: $scope.newTrack });
+      var newTrack = { title: $scope.newTrack };
+      $http.post('/api/tracks', newTrack);
       $scope.newTrack = '';
+      $scope.tracks.push(newTrack);
     };
 
     $scope.$on('$destroy', function () {

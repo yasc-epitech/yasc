@@ -17,8 +17,10 @@ angular.module('yascApp')
       if($scope.newPlaylist === '') {
         return;
       }
-      $http.post('/api/playlists', { title: $scope.newPlaylist });
+      var newPlaylist = { title: $scope.newPlaylist };
+      $http.post('/api/playlists', newPlaylist);
       $scope.newPlaylist = '';
+      $scope.playlists.push(newPlaylist);
     };
 
     $scope.$on('$destroy', function () {
