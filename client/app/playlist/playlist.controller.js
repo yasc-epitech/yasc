@@ -11,14 +11,17 @@ angular.module('yascApp')
 
     $scope.deletePlaylist = function(playlist) {
       $http.delete('/api/playlists/' + playlist._id);
+      _.remove($scope.playlists, function(item) { return item._id === playlist._id });
     };
 
     $scope.addPlaylist = function() {
       if($scope.newPlaylist === '') {
         return;
       }
-      $http.post('/api/playlists', { title: $scope.newPlaylist });
+      var newPlaylist = { title: $scope.newPlaylist };
+      $http.post('/api/playlists', newPlaylist);
       $scope.newPlaylist = '';
+      $scope.playlists.push(newPlaylist);
     };
 
     $scope.$on('$destroy', function () {

@@ -11,14 +11,17 @@ angular.module('yascApp')
 
     $scope.deleteGenre = function(genre) {
       $http.delete('/api/genres/' + genre._id);
+      _.remove($scope.genres, function(item) { return item._id === genre._id });
     };
 
     $scope.addGenre = function() {
       if($scope.newGenre === '') {
         return;
       }
-      $http.post('/api/genres', { name: $scope.newGenre });
+      var newGenre = { name: $scope.newGenre };
+      $http.post('/api/genres', newGenre);
       $scope.newGenre = '';
+      $scope.genres.push(newGenre);
     };
 
     $scope.$on('$destroy', function () {
