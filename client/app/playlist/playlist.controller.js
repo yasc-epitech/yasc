@@ -11,6 +11,7 @@ angular.module('yascApp')
 
     $scope.deletePlaylist = function(playlist) {
       $http.delete('/api/playlists/' + playlist._id);
+      _.remove($scope.playlists, function(item) { return item._id === playlist._id });
     };
 
     $scope.addPlaylist = function() {
