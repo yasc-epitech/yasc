@@ -11,17 +11,14 @@ angular.module('yascApp')
 
     $scope.deleteTrack = function(track) {
       $http.delete('/api/tracks/' + track._id);
-      _.remove($scope.tracks, function(item) { return item._id === track._id });
     };
 
     $scope.addTrack = function() {
       if($scope.newTrack === '') {
         return;
       }
-      var newTrack = { title: $scope.newTrack };
-      $http.post('/api/tracks', newTrack);
+      $http.post('/api/tracks', { title: $scope.newTrack });
       $scope.newTrack = '';
-      $scope.tracks.push(newTrack);
     };
 
     $scope.$on('$destroy', function () {
