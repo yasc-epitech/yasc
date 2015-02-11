@@ -15,16 +15,14 @@ User.findOne({ email: 'admin@admin.com' }, function(error, user) {
     url:         'http://soundcloud.com/forss/flickermood',
     artwork_url: 'http://posey.com/artwork_url',
     duration:    240,
-    author:      'Anakin',
-    user:        user._id
+    author:      'Anakin'
   }, {
     title:       'Dou-double Poney Swag',
     description: 'description track 2',
     url:         'http://soundcloud.com/forss/flickermood',
     artwork_url: 'http://posey.com/artwork_url',
     duration:    180,
-    author:      'Dark Vador',
-    user:        user._id
+    author:      'Dark Vador'
   });
 });
 console.log('Finished populating tracks');
