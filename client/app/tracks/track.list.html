@@ -12,7 +12,7 @@
     <div class="col-lg-12">
       <h1 class="page-header">Tracks:</h1>
       <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="track in tracks">
-        <li><a href="#" ng-click="console.log('asdf');gotoTrack(track._id);">{{track.title}}<button type="button" class="close" ng-click="deleteTrack(track)">&times;</button></a></li>
+        <li><a href="#"><span ng-click="gotoTrack(track._id);">{{track.title}}</span><button type="button" class="close" ng-click="deleteTrack(track)">&times;</button></a></li>
       </ul>
     </div>
   </div>
