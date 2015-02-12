@@ -35,6 +35,14 @@ angular.module('yascApp')
         var track_id = $routeParams.track_id;
         $http.get('/api/tracks/' + track_id).success(function(track) {
             $scope.track = track;
+            var widgetIframe = document.getElementById('sc-widget'),
+            widget = SC.Widget(widgetIframe)
+            widget.load('http://api.soundcloud.com/tracks/' + track.url, {
+            show_artwork: true,
+            auto_play: true
+          });
+
         });
+
     });
 
