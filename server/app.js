@@ -33,6 +33,7 @@ if ( config.seedDB ) {
   require('./config/seeds/tags');
   require('./config/seeds/tracks');
   require('./config/seeds/playlists');
+  require('./config/seeds/playlist_items');
 }
 
 // Setup server
