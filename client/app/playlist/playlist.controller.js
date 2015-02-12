@@ -27,4 +27,27 @@ angular.module('yascApp')
     $scope.$on('$destroy', function () {
       socket.unsyncUpdates('playlist');
     });
+  })
+  .controller('PlaylistDetailCtrl', function ($http, $scope, $routeParams) {
+    $scope.playlist = {};
+    $scope.tracks = {};
+
+    var playlist_id = $routeParams.playlist_id;
+
+    $http.get('/api/playlists/' + playlist_id).success(function(playlist) {
+      $scope.playlist = playlist;
+    });
+    $http.get('/api/tracks/').success(function(tracks) {
+      $scope.tracks = tracks;
+    });
+
+    $scope.playTrack = function(track) {
+      var widgetIframe = document.getElementById('sc-widget'),
+      widget = SC.Widget(widgetIframe)
+      widget.load('http://api.soundcloud.com/tracks/' + track.url, {
+        show_artwork: false,
+        auto_play: true
+      });
+    };
+
   });

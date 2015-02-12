@@ -1,18 +1,11 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<header class="hero-unit" id="banner">
-  <div class="container">
-    <h1>YASC</h1>
-    <p class="lead">Full-stack Javascript project for {EPITECH.}</p>
-  </div>
-</header>
-
-<div class="container">
+<div class="container" ng-controller="PlaylistDetailCtrl">
   <div class="row">
     <div class="col-lg-12">
-      <h1 class="page-header">Playlists:</h1>
-      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="playlist in playlists">
-        <li><a href="#">{{playlist.title}}<button type="button" class="close" ng-click="deletePlaylist(playlist)">&times;</button></a></li>
+      <h1 class="page-header">{{playlist.title}}</h1>
+      <ul class="nav nav-tabs nav-stacked col-md-12 col-lg-12 col-sm-12" ng-repeat="track in tracks">
+        <li><a href="#">{{track.title}} --- {{track.url}}<button type="button" class="close" ng-click="playTrack(track)">&times;</button></a></li>
       </ul>
     </div>
   </div>
