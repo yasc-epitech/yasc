@@ -9,6 +9,7 @@ var Playlist = require('../../api/playlist/playlist.model');
 var Track = require('../../api/track/track.model');
 var PlaylistItem = require('../../api/playlist_item/playlist_item.model');
 
+
 PlaylistItem.find({}).remove(function() {
   PlaylistItem.create({
     playlist:  Playlist.findOne({ title: 'Chill' })._id,
@@ -20,4 +21,3 @@ PlaylistItem.find({}).remove(function() {
     console.log('Finished populating playlist_items');
   });
 });
-
