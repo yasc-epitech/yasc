@@ -38,7 +38,22 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
+    <div ng-include="'components/navbar/navbar.html'"></div>
+
+    <header class="hero-unit" id="banner">
+      <div class="container">
+        <h1>YASC</h1>
+        <p class="lead">Full-stack Javascript project for {EPITECH.}</p>
+      </div>
+    </header>
+
     <div ng-view=""></div>
+
+    <footer class="footer">
+      <div class="container">
+        <p>Angular Fullstack v2.0.13</p>
+      </div>
+    </footer>
 
     <!--[if lt IE 9]>
     <script src="bower_components/es5-shim/es5-shim.js"></script>
