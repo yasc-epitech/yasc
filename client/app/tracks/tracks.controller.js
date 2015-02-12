@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('yascApp')
-    .controller('TracksCtrl', function ($scope, $http, socket) {
+    .controller('TracksCtrl', function ($scope, $http, $location, socket) {
         $scope.tracks = [];
 
         $http.get('/api/tracks').success(function(tracks) {
@@ -19,6 +19,10 @@ angular.module('yascApp')
             }
             $http.post('/api/tracks', { title: $scope.newTrack });
             $scope.newTrack = '';
+        };
+
+        $scope.gotoTrack = function(track_id) {
+            $location.path('/tracks/' + track_id);
         };
 
         $scope.$on('$destroy', function () {
