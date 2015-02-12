@@ -1,29 +1,27 @@
-<div class="container">
+<div class="container intro-container">
     <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">Tracks:</h1>
-            <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="track in awesomeTracks">
-                <li><a href="#" tooltip="{{track.description}}">{{track.title}}<button type="button" class="close" ng-click="deleteTrack(track)">&times;</button></a></li>
-            </ul>
-        </div>
-    </div>
+      <div class="col-lg-4 col-sm-6 text-center">
+        <img class="img-circle img-intro img-responsive img-center" src="assets/images/soundcloud.png" alt="">
+        <h3>Soundcloud
+          <small>Client</small>
+        </h3>
+        <p>YASC is a soundcloud client so you can access all soundcloud tracks.</p>
+      </div>
 
-    <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">Features:</h1>
-            <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in awesomeThings">
-                <li><a href="#" tooltip="{{thing.info}}">{{thing.name}}<button type="button" class="close" ng-click="deleteThing(thing)">&times;</button></a></li>
-            </ul>
-        </div>
-    </div>
+      <div class="col-lg-4 col-sm-6 text-center">
+        <img class="img-circle img-intro img-responsive img-center" src="assets/images/playlist.png" alt="">
+        <h3>Playlist
+          <small>Manager</small>
+        </h3>
+        <p>With YASC you can easily manage all your playlists with soundcloud tracks.</p>
+      </div>
 
-    <form class="thing-form">
-        <label>Syncs in realtime across clients</label>
-        <p class="input-group">
-            <input type="text" class="form-control" placeholder="Add a new thing here." ng-model="newThing">
-            <span class="input-group-btn">
-                <button type="submit" class="btn btn-primary" ng-click="addThing()">Add New</button>
-            </span>
-        </p>
-    </form>
+      <div class="col-lg-4 col-sm-6 text-center">
+        <img class="img-circle img-intro img-responsive img-center" src="assets/images/responsive.png" alt="">
+        <h3>Responsive
+          <small>Design</small>
+        </h3>
+        <p>YASC is a responsive Website. So you can access it on Smartphone, Tablette or Web Browser.</p>
+      </div>
+    </div>
 </div>
