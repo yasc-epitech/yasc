@@ -18,6 +18,7 @@ function onConnect(socket) {
   });
 
   // Insert sockets below
+  require('../api/playlist_item/playlist_item.socket').register(socket);
   require('../api/thing/thing.socket').register(socket);
   require('../api/track/track.socket').register(socket);
 }
